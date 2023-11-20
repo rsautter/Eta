@@ -1,0 +1,10 @@
+LICENSE
+setup.py
+Eta.egg-info/PKG-INFO
+Eta.egg-info/SOURCES.txt
+Eta.egg-info/dependency_links.txt
+Eta.egg-info/top_level.txt
+eta/__init__.py
+eta/entropicForm.py
+eta/entropy.py
+eta/probability.py
