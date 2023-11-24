@@ -1,4 +1,5 @@
 LICENSE
+README.md
 setup.py
 Eta.egg-info/PKG-INFO
 Eta.egg-info/SOURCES.txt

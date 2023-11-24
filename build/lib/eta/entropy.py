@@ -1,13 +1,13 @@
 from .entropicForm import *
 from .probability import *
 
-def entropy(mat,equation=['Shannon','PowerlawTsallis'], prob=['Statistical','Permutation','Spectral'], **kwargs):
+def entropy(mat,equation=['Shannon','PowerlawTsallis'], prob=['Histogram','Permutation','Spectral'], **kwargs):
   outputs = {}
   for eq in equation:
     for probType in prob:
       key = probType+'_'+eq
 
-      if probType.lower()=='statistical':
+      if probType.lower()=='histogram':
         percent = kwargs['percent'] if 'percent' in kwargs.keys() else None
         p = getStatProb(mat,percent)
       elif probType.lower()=='permutation':
