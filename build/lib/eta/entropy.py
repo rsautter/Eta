@@ -3,19 +3,20 @@ from .probability import *
 
 def entropy(mat,equation=['Shannon','PowerlawTsallis'], prob=['Histogram','Permutation','Spectral'], **kwargs):
   outputs = {}
+  nmat = (np.array(mat) - np.average(mat))/np.sum(mat)
   for eq in equation:
     for probType in prob:
       key = probType+'_'+eq
 
       if probType.lower()=='histogram':
         percent = kwargs['percent'] if 'percent' in kwargs.keys() else None
-        p = getStatProb(mat,percent)
+        p = getStatProb(nmat,percent)
       elif probType.lower()=='permutation':
         nx = kwargs['nx'] if 'nx' in kwargs.keys() else None
         ny = kwargs['ny'] if 'ny' in kwargs.keys() else None
-        p = getPermutationProb(mat,nx,ny)
+        p = getPermutationProb(nmat,nx,ny)
       elif probType.lower()=='spectral':
-        p = getSpectralProb(mat)
+        p = getSpectralProb(nmat)
       else:
         raise Exception("Probability: "+probType+" not implemented!")
 
