@@ -3,7 +3,7 @@ from .probability import *
 
 def entropy(mat,equation=['Shannon','PowerlawTsallis'], prob=['Histogram','Permutation','Spectral'], **kwargs):
   outputs = {}
-  nmat = (np.array(mat) - np.average(mat))/np.sum(mat)
+  nmat = (np.array(mat) - np.average(mat))/np.std(mat)
   for eq in equation:
     for probType in prob:
       key = probType+'_'+eq
