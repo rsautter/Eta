@@ -10,9 +10,9 @@ def tsallis(p,q=None,eps = None):
   epsi = 1e-4 if eps is None else eps
 
   if np.abs(qi-1)>epsi:
-    return (1 - np.sum(np.power(p,qi)))/(qi-1)
+    return -(1 - np.sum(np.power(p,qi)))/(qi-1)
   else:
-    return 	(1 - np.sum(np.power(p,qi+epsi)))/(qi+epsi-1)
+    return 	-(1 - np.sum(np.power(p,qi+epsi)))/(qi+epsi-1)
 '''
 def tsallis(p,q=None,eps = None):
   qi = 1 if q is None else q
