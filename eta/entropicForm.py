@@ -32,9 +32,9 @@ def plTsallis(p,qs=None,eps=None,returnQH=False):
   epsi = 1e-4 if eps is None else eps
   for q in qsi:
     ts.append(tsallis(p,q,eps))
-  alpha,  _ = np.polyfit(np.log(qsi),np.log(ts),deg=1)
+  alpha,  _ = np.polyfit(np.log(np.abs(qsi)),np.log(np.abs(ts)),deg=1)
   if not(returnQH):
     return alpha
   else:
-    return alpha, np.exp(qsi),np.log(np.array(ts))
+    return alpha, np.exp(qsi),np.log(np.array(np.abs(ts)))
 
